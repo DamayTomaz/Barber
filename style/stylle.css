@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Parkinsans", serif;
+}
+:root {
+  --cor-secundaria: #a17b37; /* Amarelo ouro */
+  --cor-erro: #ff4c4c; /* Vermelho */
+  --cor-sucesso: #28a745; /* Verde sucesso */
+  --cor-info: #17a2b8; /* Azul claro */
+}
+header {
+  height: 7em;
+  width: 100%;
+  color: white;
+  display: flex;
+  padding: 0.5em;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.5em;
+  background-color: rgba(0, 0, 0, 0.842);
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  margin-bottom: 1em;
+
+}
+aside{
+    padding-top: 8em;
+    background-color: rgb(255, 255, 255);
+    color: var(--cor-secundaria);
+    height: 4em;
+    font-size: 0.5em;
+    text-align: center;
+}
+a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit;
+}
+#logo {
+  height: 3em;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+  color: aliceblue;
+  background-color: rgb(82, 74, 64);
+  padding: 1em;
+  height: 80vh;
+  gap: 2em;
+}
+article h1 {
+  color: var(--cor-secundaria);
+  font-size: 3em;
+}
+article button {
+  background-color: var(--cor-secundaria);
+  border: none;
+  border-radius: 0.6em;
+  min-width: 10em;
+  min-height: 3em;
+  font-weight: 600;
+  font-size: 1em;
+}
+section {
+  background-color: black;
+  color: var(--cor-secundaria);
+}
+.clients {
+  height: 7em;
+}
+#localizacao {
+  transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+iframe {
+  width: 80%;
+  height: 100%;
+  border: solid 2px var(--cor-secundaria);
+  border-radius: 0.6em;
+}
