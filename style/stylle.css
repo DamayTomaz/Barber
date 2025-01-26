@@ -46,10 +46,21 @@ i:hover{
 }
 ul#menuToggle {
   background-color: var(--branco);
-  width: 100vh;
-  height: 100vh;
-  display: flex;
+  display:noe ;
+  list-style: none;
   position: fixed;
+  text-align: center;
+  height: 16em;
+
+}
+li a{
+  text-decoration: none;
+  color: var(--branco);
+  font-size: 1.4em;
+  background-color: var(--cor-secundaria);
+  border-radius: 1em;
+  padding: 0.3em;
+
 }
 
 #agendar {
