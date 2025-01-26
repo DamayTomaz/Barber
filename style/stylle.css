@@ -29,8 +29,8 @@ header {
   padding: 1em;
 }
 #logo {
-  height: 1.375em;
-  width: 2.8125em;
+  height: 1.475em;
+  width: 2.9125em;
 }
 li {
   display: none;
@@ -54,6 +54,7 @@ h1 {
   text-align: center;
 }
 #btn-agendar {
+  color: var(--preto);
   font-size: 0.9em;
   background-color: var(--branco);
   border: none;
@@ -121,6 +122,14 @@ section input:hover{
   background-color: orange;
   transition: all 0.5s;
 }
+#h22{
+  font-size: 0.8em;
+}
+#h22 span{
+  font-size: 1em;
+  position: relative;
+  left: 2em;
+}
 figure {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -148,6 +157,7 @@ article {
   color: var(--branco);
   font-size: 0.2em;
   font-weight: 100;
+  padding: 1em;
 }
 article span {
   color: white;
