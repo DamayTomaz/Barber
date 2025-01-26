@@ -1,10 +1,17 @@
-const images = document.querySelectorAll('figure img');
 let currentIndex = 0;
+const imageSets = document.querySelectorAll('.image-set');
+const totalSets = imageSets.length;
 
-function changeImage() {
-  images[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % images.length;
-  images[currentIndex].classList.add('active');
+function changeImageSet() {
+  // Remove a classe 'active' do conjunto atual
+  imageSets[currentIndex].classList.remove('active');
+
+  // Incrementa o índice para o próximo conjunto
+  currentIndex = (currentIndex + 1) % totalSets;
+
+  // Adiciona a classe 'active' ao próximo conjunto
+  imageSets[currentIndex].classList.add('active');
 }
 
-setInterval(changeImage, 4000); // Troca a imagem a cada 4 segundos
+// Troca de conjunto de imagens a cada 4 segundos (4000ms)
+setInterval(changeImageSet, 4000);
