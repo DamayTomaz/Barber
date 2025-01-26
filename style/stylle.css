@@ -32,8 +32,24 @@ header {
   height: 1.475em;
   width: 2.9125em;
 }
-li {
-  display: none;
+nav button{
+  background:none;
+  border: none;
+}
+nav i{
+  color: var(--branco);
+  font-size: 2em;
+}
+i:hover{
+  color: orange;
+  cursor: pointer;
+}
+ul#menuToggle {
+  background-color: var(--branco);
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  position: fixed;
 }
 
 #agendar {
@@ -63,7 +79,7 @@ h1 {
   padding: 0.1em;
   margin-bottom: 2em;
 }
-#btn-agendar:hover{
+#btn-agendar:hover {
   cursor: pointer;
   background-color: orange;
   transition: all 0.5s;
@@ -83,7 +99,7 @@ main {
 }
 
 h2 span {
-  font-size:1.5em;
+  font-size: 1.5em;
   letter-spacing: 0.09em;
 }
 .box-section {
@@ -92,10 +108,7 @@ h2 span {
   border-radius: 1em;
   margin: 0 2em;
   padding: 1em;
-  background: linear-gradient(
-    rgba(78, 74, 74, 0.658),
-      rgba(70, 66, 66, 0.671)
-    ),
+  background: linear-gradient(rgba(78, 74, 74, 0.658), rgba(70, 66, 66, 0.671)),
     url("../img/background-section.jpg");
   background-size: cover;
   backdrop-filter: blur(10px);
@@ -117,15 +130,15 @@ section input {
   padding: 0.1em;
   margin-bottom: 2em;
 }
-section input:hover{
+section input:hover {
   cursor: pointer;
   background-color: orange;
   transition: all 0.5s;
 }
-#h22{
+#h22 {
   font-size: 0.8em;
 }
-#h22 span{
+#h22 span {
   font-size: 1em;
   position: relative;
   left: 2em;

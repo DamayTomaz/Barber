@@ -15,3 +15,12 @@ function changeImageSet() {
 
 // Troca de conjunto de imagens a cada 4 segundos (4000ms)
 setInterval(changeImageSet, 4000);
+
+//menu
+function clickMenu(){
+  if(menuToggle.style.display == 'block'){
+    menuToggle.style.display = 'none'
+  } else{
+    menuToggle.style.display = 'block'
+  }
+}
