@@ -17,10 +17,32 @@ function changeImageSet() {
 setInterval(changeImageSet, 4000);
 
 //menu
-function clickMenu(){
-  if(menuToggle.style.display == 'block'){
-    menuToggle.style.display = 'none'
+function openAgenda(){
+  if(formToggle.style.display == 'block'){
+    formToggle.style.display = 'none'
   } else{
-    menuToggle.style.display = 'block'
+    formToggle.style.display = 'block'
+    
   }
+  
 }
+
+function clickMenu() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open'); // Alterna a classe 'open' para abrir/fechar a sidebar
+}
+//data limite
+const today = new Date();
+    
+// Formata a data atual no formato "YYYY-MM-DD"
+const todayStr = today.toISOString().split("T")[0];
+
+// Calcula a data máxima (3 dias no futuro)
+const maxDate = new Date();
+maxDate.setDate(today.getDate() + 3);
+const maxDateStr = maxDate.toISOString().split("T")[0];
+
+// Configura o campo de data com o limite
+const dateInput = document.getElementById("data");
+dateInput.min = todayStr; // Data mínima é hoje
+dateInput.max = maxDateStr; // Data máxima é 3 dias no futuro

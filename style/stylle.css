@@ -39,28 +39,55 @@ nav button{
 nav i{
   color: var(--branco);
   font-size: 2em;
+  position: fixed;
+  z-index: 2000;
 }
 i:hover{
   color: orange;
   cursor: pointer;
 }
-ul#menuToggle {
-  background-color: var(--branco);
-  display:noe ;
-  list-style: none;
+.sidebar {
   position: fixed;
-  text-align: center;
-  height: 16em;
-
+  top: 0;
+  right: 20em;
+  width: 10em;
+  height: 100%;
+  background-color: var(--preto);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
 }
-li a{
-  text-decoration: none;
-  color: var(--branco);
-  font-size: 1.4em;
-  background-color: var(--cor-secundaria);
-  border-radius: 1em;
-  padding: 0.3em;
 
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar li a {
+  color: var(--branco);
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  color: orange;
+}
+
+ul#menuToggle {
+  display: none;
+  /* O menu padrão (horizontal) permanece oculto */
+}
+
+/* Quando a sidebar está aberta */
+.sidebar.open {
+  left: 0;
+  /* Move a sidebar para dentro da tela */
 }
 
 #agendar {
@@ -69,6 +96,7 @@ li a{
   align-items: center;
   gap: 2em;
 }
+
 aside {
   display: flex;
   flex-direction: column;
@@ -108,6 +136,12 @@ main {
   align-items: center;
   background-color: #000000;
 }
+#openAgenda{
+display: none;
+  height: 10em;
+  background-color: #000000;
+  flex-direction: column;
+}
 
 h2 span {
   font-size: 1.5em;
@@ -119,11 +153,12 @@ h2 span {
   border-radius: 1em;
   margin: 0 2em;
   padding: 1em;
-  background: linear-gradient(rgba(78, 74, 74, 0.658), rgba(70, 66, 66, 0.671)),
+  background: linear-gradient(rgba(43, 40, 40, 0.925), rgba(36, 35, 35, 0.747)),
     url("../img/background-section.jpg");
   background-size: cover;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  position: inherit;
 }
 section {
   display: flex;

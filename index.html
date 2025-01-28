@@ -15,12 +15,14 @@
     <header>
       <nav class="menu-navegacao">
         <button id="btn-burguer" onclick="clickMenu()" aria-label="Abrir menu" ><i class='bx bx-menu'></i></button>
-        <ul id="menuToggle" class="menu-fechado">
-          <li><a href="#agendar">Agendar</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#localizacao">localizacao</a></li>
-        </ul>
+        <div id="sidebar" class="sidebar">
+          <ul>
+            <li><a href="#agendar">Agendar</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+          </ul>
+        </div>
       </nav>
       <img
       id="logo"
@@ -32,7 +34,31 @@
 
     <aside>
         <h1>CORTES DE CABELO <p></p>& BARBA</h1>
-        <button id="btn-agendar" type="button">Agendar</button>
+        <button id="btn-agendar" onclick="openAgenda()" type="button">Agendar</button>
+        <form id="formToggle">
+          <label for="nome"></label>
+          <input type="text" id="nome" name="nome" placeholder="Insira o seu nome" />
+        
+          <label for="numero"></label>
+          <input type="text" id="numero" name="numero" placeholder="Numero para contato" required />
+        
+          <input list="serviços" id="servics" name="serviços" placeholder="Escolha o serviço">
+          <datalist id="serviços">
+            <option value="Corte">
+            <option value="Barba">
+            <option value="Corte + Barba">
+            <option value="Selagem">
+            <option value="Nevou">
+          </datalist>
+        
+          <label for="data"></label>
+          <input type="date" id="data" name="data" required >
+        
+          <label for="hora"></label>
+          <input type="time" id="hora" name="hora" required />
+          
+          <button type="submit">Agendar</button>
+        </form>
     </aside>
     
 
