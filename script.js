@@ -2,47 +2,42 @@ let currentIndex = 0;
 const imageSets = document.querySelectorAll('.image-set');
 const totalSets = imageSets.length;
 
+// Troca de conjunto de imagens
 function changeImageSet() {
-  // Remove a classe 'active' do conjunto atual
   imageSets[currentIndex].classList.remove('active');
-
-  // Incrementa o índice para o próximo conjunto
   currentIndex = (currentIndex + 1) % totalSets;
-
-  // Adiciona a classe 'active' ao próximo conjunto
   imageSets[currentIndex].classList.add('active');
 }
 
-// Troca de conjunto de imagens a cada 4 segundos (4000ms)
 setInterval(changeImageSet, 4000);
 
-//menu
+// Abre e fecha o formulário
 function openAgenda(){
-  if(formToggle.style.display == 'block'){
-    formToggle.style.display = 'none'
-  } else{
-    formToggle.style.display = 'block'
-    
-  }
-  
+  formToggle.style.display = formToggle.style.display === 'block' ? 'none' : 'block';
 }
 
-function clickMenu() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('open'); // Alterna a classe 'open' para abrir/fechar a sidebar
+const btnBurguer = document.querySelector('#btn-burguer');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.querySelector('.overlay');
+
+// Alterna a visibilidade da sidebar
+function toggleSidebar() {
+  const isSidebarOpen = sidebar.classList.contains('open');
+  sidebar.classList.toggle('open', !isSidebarOpen);
+  overlay.classList.toggle('active', !isSidebarOpen);
 }
-//data limite
+
+btnBurguer.addEventListener('click', toggleSidebar);
+overlay.addEventListener('click', toggleSidebar);
+
+// Define limites para o campo de data
 const today = new Date();
-    
-// Formata a data atual no formato "YYYY-MM-DD"
 const todayStr = today.toISOString().split("T")[0];
 
-// Calcula a data máxima (3 dias no futuro)
 const maxDate = new Date();
 maxDate.setDate(today.getDate() + 3);
 const maxDateStr = maxDate.toISOString().split("T")[0];
 
-// Configura o campo de data com o limite
 const dateInput = document.getElementById("data");
-dateInput.min = todayStr; // Data mínima é hoje
-dateInput.max = maxDateStr; // Data máxima é 3 dias no futuro
+dateInput.min = todayStr;
+dateInput.max = maxDateStr;
