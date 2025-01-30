@@ -41,3 +41,22 @@ const maxDateStr = maxDate.toISOString().split("T")[0];
 const dateInput = document.getElementById("data");
 dateInput.min = todayStr;
 dateInput.max = maxDateStr;
+
+//Define Horario para o campo time
+
+const selectElement = document.getElementById('time');
+const startTime = 9 * 60; // 09:00 em minutos
+const endTime = 18 * 60; // 18:00 em minutos
+const interval = 30; // Intervalo de 30 minutos
+
+for (let time = startTime; time <= endTime; time += interval) {
+    const hour = Math.floor(time / 60);
+    const minute = time % 60;
+    const formattedTime = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+    
+    const option = document.createElement('option');
+    option.value = formattedTime;
+    option.textContent = formattedTime;
+
+    selectElement.appendChild(option);
+}

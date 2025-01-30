@@ -54,28 +54,29 @@
           Agendar
         </button>
         <form id="formToggle">
-          <label for="nome"></label>
+          <label for="nome">Nome</label>
           <input
             type="text"
             id="nome"
             name="nome"
-            placeholder="Insira o seu nome"
+            placeholder="Ex.: João Silva"
           />
-
-          <label for="numero"></label>
+        
+          <label for="numero">Número de Contato</label>
           <input
             type="text"
             id="numero"
             name="numero"
-            placeholder="Numero para contato"
+            placeholder="Ex.: (11) 91234-5678"
             required
           />
-
+        
+          <label for="servics">Serviço</label>
           <input
             list="serviços"
             id="servics"
             name="serviços"
-            placeholder="Escolha o serviço"
+            placeholder="Escolha o serviço desejado"
           />
           <datalist id="serviços">
             <option value="Corte"></option>
@@ -84,14 +85,19 @@
             <option value="Selagem"></option>
             <option value="Nevou"></option>
           </datalist>
-
-          <label for="data"></label>
-          <input type="date" id="data" name="data" required />
-
-          <label for="hora"></label>
-          <input type="time" id="hora" name="hora" required />
-
-          <button type="submit">Agendar</button>
+        
+          <label for="data">Data</label>
+          <input
+            type="date"
+            id="data"
+            name="data"
+            required
+          />
+        
+          <p></p><label for="time">Hora</label></p>
+          <select name="time" id="time"></select>
+        
+          <button type="submit">Confirmar Agendamento</button>
         </form>
       </aside>
     </div>
@@ -140,6 +146,9 @@
         </p>
       </article>
     </main>
+    <div id="locate">
+      <h1>Venha conhecer a Barbearia!</h1>
+    </div>
     <div class="background-container2"></div>
     <footer>
       <img
